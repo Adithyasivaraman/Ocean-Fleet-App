@@ -25,4 +25,19 @@ public class VesselUtil {
     public void addVesselPerformance(Vessel vessel) {
         vesselList.add(vessel);
     }
+
+    /**
+     * Retrieves vessel details by vesselId.
+     */
+    public Vessel getVesselById(String vesselId) {
+
+        for (Vessel vessel : vesselList) {
+            if (vessel.getVesselId().equals(vesselId)) {
+                return vessel;
+            }
+        }
+
+        return null;
+    }
+
 }
