@@ -51,16 +51,14 @@ public class VesselUtil {
             return result;
         }
 
-        double maxSpeed = 0;
+        double maxSpeed = vesselList.get(0).getAverageSpeed();
 
-        // Find maximum speed
         for (Vessel vessel : vesselList) {
             if (vessel.getAverageSpeed() > maxSpeed) {
                 maxSpeed = vessel.getAverageSpeed();
             }
         }
 
-        // Collect vessels matching max speed
         for (Vessel vessel : vesselList) {
             if (vessel.getAverageSpeed() == maxSpeed) {
                 result.add(vessel);
@@ -69,4 +67,5 @@ public class VesselUtil {
 
         return result;
     }
+
 }
